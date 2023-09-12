@@ -27,7 +27,7 @@ module Fastlane
         }
 
         data = if ios_keychain_support
-                 { "ios_keychain_access": ios_keychain_support.to_s }
+                 { "ios_keychain_support": ios_keychain_support.to_s }
                else
                  custom_id ? { "custom_id": custom_id } : {}
                end
