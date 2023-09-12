@@ -37,6 +37,16 @@ Use custom_id in 'app' capability for Appium to always pick the last uploaded bu
 The file_path parameter is not required if the app was built in the same lane with the help of Gradle or Gym plugin.
 ```
 
+If you need iOS Keychain Cleanup and iOS Keychain Access Groups Support, you can use the following action in the fastfile
+```
+upload_to_browserstack_app_automate(
+  browserstack_username: ENV["BROWSERSTACK_USERNAME"],
+  browserstack_access_key: ENV["BROWSERSTACK_ACCESS_KEY"],
+  file_path: "<path_to_your_apk_ipa_or_aab_file>",
+  ios_keychain_support: true,
+)
+```
+
 For uploading your app to AppLive use the following action in the fastfile
 ```
 upload_to_browserstack_app_live(
