@@ -27,12 +27,10 @@ module Fastlane
         }
 
         data = if ios_keychain_support
-                 { "ios_keychain_support": ios_keychain_support.to_s }
+                 payload[:os_keychain_support] = ios_keychain_support.to_s
                else
-                 custom_id ? { "custom_id": custom_id } : {}
+                 payload[:custom_id] = custom_id.to_s
                end
-
-        payload[:data] = JSON.generate(data) unless data.empty?
 
         headers = {
           "User-Agent" => "browserstack_fastlane_plugin"
